@@ -1,0 +1,31 @@
+<html xmlns:c="http://www.concordion.org/2007/concordion" xmlns:ext="urn:concordion-extensions:2010">
+<head>
+    <title>IRD PAYE Kiwisaver Deductions Calculator</title>
+</head>
+<body>
+
+<div c:example="testEmployeePAYE">
+    <h3 c:execute="logExample(#TEXT)">Example: Calculate Employee PAYE</h3>
+    <dl>
+        <dt>Given:</dt>
+        <dd c:execute="enterUserAndTaxDetails()">I am an employee who wants to calculate my PAYE for the current tax year</dd>
+    </dl>
+    <dl>
+        <dt>When:</dt>
+        <dd c:execute="enterPayDetails()">I enter my personal details and pay information</dd>
+    </dl>
+    <dl>
+        <dt>Then:</dt>
+        <dd>I can see a PAYE summary with the following details:</dd>
+    </dl>
+    <ul>
+        <li c:assertTrue="hasName()">Name</li>
+        <li c:assertTrue="hasReferenceNumber()">Reference Number</li>
+        <li c:assertTrue="hasTaxCode()">Tax Code</li>
+        <li c:assertTrue="hasPayFrequency()">Payment Frequency</li>
+        <li c:assertTrue="hasPayAmount()">Pay Amount</li>
+    </ul>
+</div>
+
+</body>
+</html>

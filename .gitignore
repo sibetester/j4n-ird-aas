@@ -1,0 +1,8 @@
+/output/
+/.settings/
+/.gradle/
+/.idea/
+/build/
+.classpath
+j4n-ird-aas.iml
+
