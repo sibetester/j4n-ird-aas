@@ -16,7 +16,7 @@ sourceSets {
         }
     }
     test {
-        resources {
+        java {
             srcDirs "src/test"
         }
     }
