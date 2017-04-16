@@ -27,7 +27,7 @@ public class SummaryPage {
             @Override
             public SummaryPage apply(WebDriver input) {
                 WebElement element = ExpectedConditions.presenceOfElementLocated(
-                    By.cssSelector("#summary84 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)")).apply(input);
+                    By.cssSelector("#summary85 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)")).apply(input);
                 if (element != null) {
                     return new SummaryPage(input);
                 }
@@ -37,32 +37,32 @@ public class SummaryPage {
     }
 
     public String getName() {
-        String yourName = "#summary84 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)";
+        String yourName = "#summary85 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(yourName)).getText();
     }
 
     public String getReferenceNumber() {
-        String referenceNumber = "#summary84 > div > table > tbody > tr:nth-child(2) > td:nth-child(2)";
+        String referenceNumber = "#summary85 > div > table > tbody > tr:nth-child(2) > td:nth-child(2)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(referenceNumber)).getText();
     }
 
     public String getTaxCode() {
-        String taxCode = "#summary84 > div > table > tbody > tr:nth-child(3) > td:nth-child(2)";
+        String taxCode = "#summary85 > div > table > tbody > tr:nth-child(3) > td:nth-child(2)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(taxCode)).getText();
     }
 
     public String getPayFrequency() {
-        String payFrequency = "#summary95 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)";
+        String payFrequency = "#summary96 > div > table > tbody > tr:nth-child(1) > td:nth-child(2)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(payFrequency)).getText();
     }
 
     public String getPayAmount() {
-        String payAmount = "#summary95 > div > table > tbody > tr:nth-child(3) > td:nth-child(2)";
+        String payAmount = "#summary96 > div > table > tbody > tr:nth-child(3) > td:nth-child(2)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(payAmount)).getText();
     }
 
     public String getCalculatePAYE() {
-        String calculationPAYE = "#summary103 > div > table > tbody > tr:nth-child(2) > td:nth-child(3)";
+        String calculationPAYE = "#summary104 > div > table > tbody > tr:nth-child(2) > td:nth-child(3)";
         return WebDriverUtils.getMandatoryElement(driver, By.cssSelector(calculationPAYE)).getText();
     }
 }

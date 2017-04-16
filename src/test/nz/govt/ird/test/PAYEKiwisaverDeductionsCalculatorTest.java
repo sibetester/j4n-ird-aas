@@ -19,7 +19,7 @@ public class PAYEKiwisaverDeductionsCalculatorTest extends WebDriverFixture {
 
     public void enterUserAndTaxDetails() {
         UserAndTaxYearPage userTaxYearPage = UserAndTaxYearPage.fetch(getWebDriver());
-        userTaxYearPage.enterUserAndTaxDetails("Employee", "1 April 2016 to 31 March 2017");
+        userTaxYearPage.enterUserAndTaxDetails("Employee", "1 April 2017 to 31 March 2018");
     }
 
     public void enterPayDetails() {
