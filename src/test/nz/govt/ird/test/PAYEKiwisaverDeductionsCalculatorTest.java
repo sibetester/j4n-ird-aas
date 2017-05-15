@@ -24,7 +24,7 @@ public class PAYEKiwisaverDeductionsCalculatorTest extends WebDriverFixture {
 
     public void enterPayDetails() {
         EmployeeDetailsPage employeeDetailsPage = EmployeeDetailsPage.fetch(getWebDriver());
-        employeeDetailsPage.enterPayDetails("Test User", "TEST1234", "M", "Weekly", "1,024.00", "Net");
+        employeeDetailsPage.enterPayDetails("Test User", "TEST1234", "M", "Weekly", "1,024.00", "Net", "0.03", "5");
     }
 
     public boolean hasName() {

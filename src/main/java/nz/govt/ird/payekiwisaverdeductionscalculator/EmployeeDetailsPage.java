@@ -28,7 +28,7 @@ public class EmployeeDetailsPage {
             @Override
             public EmployeeDetailsPage apply(WebDriver input) {
                 WebElement element = ExpectedConditions.presenceOfElementLocated(
-                    By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal7")).apply(input);
+                        By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal7")).apply(input);
                 if (element != null) {
                     return new EmployeeDetailsPage(input);
                 }
@@ -37,20 +37,26 @@ public class EmployeeDetailsPage {
         });
     }
 
-    public void enterPayDetails(String name, String reference, String tax, String frequency, String perPay, String amount) {
+    public void enterPayDetails(String name, String reference, String tax, String frequency, String perPay, String amount, String employeeDeductions, String employerContributions) {
 
         WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal7"))
-            .sendKeys(name);
+                .sendKeys(name);
         WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal9"))
-            .sendKeys(reference);
+                .sendKeys(reference);
         (new Select(WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal11"))))
-            .selectByValue(tax);
+                .selectByValue(tax);
 
         (new Select(WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal19"))))
-            .selectByValue(frequency);
+                .selectByValue(frequency);
         WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal20"))
-            .sendKeys(perPay);
+                .sendKeys(perPay);
         selectAmountNetOrGross(amount);
+
+        (new Select(WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal28"))))
+                .selectByValue(employeeDeductions);
+
+        WebDriverUtils.getMandatoryElement(driver, By.id("qss3Interviews_PAYECalculatorUpdated_xintglobalglobal30"))
+                .sendKeys(employerContributions);
 
         WebDriverUtils.getMandatoryElement(driver, By.id("submit")).click();
     }
@@ -58,11 +64,9 @@ public class EmployeeDetailsPage {
     private void selectAmountNetOrGross(String amount) {
         if (amount.contentEquals("Gross")) {
             WebDriverUtils.getMandatoryElement(driver, By.id("n81")).click();
-        }
-        else if (amount.contentEquals("Net")) {
+        } else if (amount.contentEquals("Net")) {
             WebDriverUtils.getMandatoryElement(driver, By.id("n92")).click();
-        }
-        else {
+        } else {
             LOG.warn("Invalid option for amount: " + amount);
         }
     }
